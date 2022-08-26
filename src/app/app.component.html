@@ -1,3 +1,17 @@
 <mat-toolbar color="primary">
   <span>Weather App</span>
 </mat-toolbar>
+
+<form  [formGroup]="searchForm">
+
+   <input   type="text" formControlName="search" />
+
+   <button type="submit"  (disabled)="!searchForm.valid" (click)="searchCity()" >Submit </button>
+
+   <div  *ngIf="weatherResponse">
+    Temperature:::: {{{weatherResponse.temperature}}
+    condition:::: {{{weatherResponse.condition}}
+    mph:::: {{{weatherResponse.mph}}
+   </div>
+
+</form>
