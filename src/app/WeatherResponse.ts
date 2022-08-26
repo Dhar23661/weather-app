@@ -1,4 +1,4 @@
-interface WeatherResponse {
+export interface WeatherResponse {
     temperature: string;
     condition: string;
     mph: string;

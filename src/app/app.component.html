@@ -9,9 +9,9 @@
    <button type="submit"  (disabled)="!searchForm.valid" (click)="searchCity()" >Submit </button>
 
    <div  *ngIf="weatherResponse">
-    Temperature:::: {{{weatherResponse.temperature}}
-    condition:::: {{{weatherResponse.condition}}
-    mph:::: {{{weatherResponse.mph}}
+    Temperature:::: {{weatherResponse.temperature}}
+    condition:::: {{weatherResponse.condition}}
+    mph:::: {{weatherResponse.mph}}
    </div>
 
 </form>

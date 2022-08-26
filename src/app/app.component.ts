@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { WeatherService } from './weather.service';
+
+import {WeatherResponse} from './WeatherResponse'
 
 @Component({
   selector: 'app-root',
@@ -12,7 +14,7 @@ export class AppComponent {
 
   weatherResponse: WeatherResponse | undefined;
 
-  searchForm: FromGroup;
+  searchForm: FormGroup;
 
   constructor(private fb: FormBuilder, private weatherService: WeatherService){
     this.searchForm=this.fb.group({
