@@ -7,12 +7,18 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class WeatherService {
+ public result: any;
 
   constructor(private client: HttpClient) { }
 
-  getWeather(city: string): Observable<any>{
-    const headerOptions =new HttpParams().set('units', 'metric').set('q', city).set('apiKey',environment.apiKey);
-    return this.client.get('url',{params: headerOptions});
-
+ public getWeather(city: string): void{
+   const headers = {
+    'X-RapidAPI-Key':'967d161a6fmsh6d884ac6d4a6234p1537ccjsne551155876b7',
+    'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
+   };
+ this.client.get(` https://weatherapi-com.p.rapidapi.com/current.json?q=${city}`, {headers: headers}).subscribe((response: any)=>{
+   this.result = response;
+   console.log('--resp', response);
+ });
   }
 }

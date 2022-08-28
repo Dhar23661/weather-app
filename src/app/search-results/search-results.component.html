@@ -1,0 +1,7 @@
+<h2>{{title}}</h2>
+<div *ngIf ="this.weatherService.result && this.weatherService.result.location">
+<h3>{{this.weatherService.result.location.region}}</h3>
+<p> current temperature(in fahrenheit): {{this.weatherService.result.current.temp_f}}</p>
+<p>condition text: {{this.weatherService.result.current.condition.text}}</p>
+<p>Wind: {{this.weatherService.result.current.wind_mph}}</p>
+</div>

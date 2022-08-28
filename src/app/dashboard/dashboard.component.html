@@ -1,0 +1,14 @@
+<mat-toolbar color="primary">
+    <span>Weather App</span>
+  </mat-toolbar>
+  
+  <form  [formGroup]="searchForm">
+  
+     <input   type="text" [(ngModel)]="inputText" formControlName="search" />
+  
+     <button type="submit" [disabled]="!inputText"  (click)="searchCity()" >Submit </button>
+  
+  
+
+  
+  </form>
