@@ -16,6 +16,7 @@ export class DashboardComponent {
   weatherResponse: WeatherResponse | undefined;
 
   searchForm: FormGroup;
+  public keyword: any[] = [];
 
   constructor(private fb: FormBuilder, private weatherService: WeatherService,
     private router: Router){
@@ -30,5 +31,20 @@ export class DashboardComponent {
     this.router.navigate(['/search-results']);
    // })
     
+  }
+
+  public choose(item:any){
+console.log('--item', item);
+
+this.weatherService.getWeather(item.name);
+this.router.navigate(['/search-results']);
+  }
+
+
+  public onEnter(e: any){
+    this.weatherService.searchCity(e.target.value).subscribe((value: any) => {
+     console.log('--value', value);
+     this.keyword = value;
+    });
   }
 }

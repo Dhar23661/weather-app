@@ -21,7 +21,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     
     ReactiveFormsModule,
     RouterModule.forRoot([{
-      path:'search-results', component: SearchResultsComponent
+      path:'search-results', component: SearchResultsComponent},
+      {
+      path: 'dashboard', component: DashboardComponent},
+    {  path: '**', component: DashboardComponent
     }])
   ],
   providers: [],
